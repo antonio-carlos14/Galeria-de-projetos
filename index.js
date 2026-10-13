@@ -1,129 +1,93 @@
-const cliente= "Juliana Prado"
-const opcaoMenu= 2
-const quantidade= 2
-const formaPagamento= "dinheiro
-const statusPedido= "enviado"
+const cliente = "Juliana Prado"
+const opcaoMenu = 2
+const quantidade = 2
+const formaPagamento = "dinheiro"
+const statusPedido = "enviado"
 
-let prato= ""
-let precoUnitario= 0
-let subtotal= 0
-let situacaoFrete=  ""
-let valorFrete= 0
-let mensagemPagamento= ""
-let percentualDesconto= 0
-let valorDesconto= 0
-let valorTotal= 0
-let situacaoPedido= ""
+let prato = "Aguardando"
+let precoUnitario = 0
 
 switch (opcaoMenu) {
     case 1:
-        console.log("cafe")
-        break
-    case 2:
-        console.log("capuccino")
-        break
-    case 3:
-        console.log("bolo")
-        break
-    case 4:
-        console.log("sanduiche")
-        break
-    default:
-        console.log("opcao invalida")
-}
-
-switch (opcaoMenu) {
-    case 1 :
-        console.log(6)
+        prato = "Café"
         precoUnitario = 6
         break
-    case 2 :
-        console.log(12)
+    case 2:
+        prato = "Cappuccino"
         precoUnitario = 12
         break
-    case 3 :
-        console.log(15)
-        precoUnitario= 15
+    case 3:
+        prato = "Bolo"
+        precoUnitario = 15
         break
-    case 4 :
-        console.log(20)
-        precoUnitario= 20
+    case 4:
+        prato = "Sanduíche"
+        precoUnitario = 20
         break
-    default :
-    console.log(0)
-        precoUnitario= 0
+    default:
+        prato = "Opção inválida"
+        precoUnitario = 0
 }
-
 
 const subtotal = precoUnitario * quantidade
 
-const situacaoFrete= subtotal >= 80 ? "Frete grátis" : "Frete pago"
-const frete= subtotal >= 80 ? 0 : 8
-const total= subtotal * frete
+const freteStatus = subtotal >= 80 ? "Frete grátis" : "Frete pago"
+const frete = subtotal >= 80 ? 0 : 8
+
+let pagamentoMensagem = "Aguardando"
+let descontoPercentual = 0
 
 switch (formaPagamento) {
     case "pix":
-        console.log("Pagamento via pix")
-        pagamentoMensagem = "Pagamento via pix"
+        pagamentoMensagem = "Pagamento via PIX"
         break
     case "cartao":
-        console.log("Pagamento via cartao")
-        pagamentoMensagem = "Pagamento via cartao"
+        pagamentoMensagem = "Pagamento via cartão"
         break
     case "dinheiro":
-        console.log("Pagamento em dinheiro")
-        pagamentoMensagem= "Pagamento em dinheiro"
+        pagamentoMensagem = "Pagamento em dinheiro"
         break
-    default :
-    console.log("Forma de pagamento invalida"
-        pagamentoMensagem = "Forma de pagamento invalida"
-
+    default:
+        pagamentoMensagem = "Forma de pagamento inválida"
 }
 
 switch (formaPagamento) {
-    case "cartao" :
-    case "dinheiro" :
-        console.log(10)
+    case "cartao":
+    case "dinheiro":
         descontoPercentual = 10
         break
-    case "pix" :
-        console.log(0)
+    case "pix":
         descontoPercentual = 0
-    default :
-        console.log(0)
+        break
+    default:
         descontoPercentual = 0
-
 }
 
-let valorDesconto = (subtotal * descontoPercentual) / 100
-let valorTotal = subtotal - valorDesconto + valorFrete
+const desconto = (subtotal * descontoPercentual) / 100
+const total = subtotal - desconto + frete
+
+let situacaoPedido = "Aguardando"
 
 switch (statusPedido) {
-    case "pendente" :
-        console.log("aguardando pagamento")
-        situacaoPedido = "aguardando pagamento"
+    case "pendente":
+        situacaoPedido = "Aguardando pagamento"
         break
-    case "aprovado" :
-        console.log("pedido em preparo")
-        situacaoPedido = "pedido em preparo"
+    case "aprovado":
+        situacaoPedido = "Pedido em preparo"
         break
-    case "enviado" :
-        console.log("pedido a caminho")
-        situacaoPedido = "pedido a caminho"
+    case "enviado":
+        situacaoPedido = "Pedido a caminho"
         break
-    case "cancelado" :
-    console.log("pedido cancelado")
-        situacaoPedido= "pedido cancelado"
+    case "cancelado":
+        situacaoPedido = "Pedido cancelado"
         break
-    default :
-    console.log("status desconhecido")
-        situacaoPedido = "status desconhecido
+    default:
+        situacaoPedido = "Status desconhecido"
 }
 
-const resumo = (`
-===================================================
-               CAFETERIA
-===================================================
+const statusMensagem = situacaoPedido
+
+const resumo = `
 cliente: ${cliente}
 opcaoMenu: ${opcaoMenu}
 quantidade: ${quantidade}
@@ -132,15 +96,14 @@ statusPedido: ${statusPedido}
 prato: ${prato}
 precoUnitario: ${precoUnitario}
 subtotal: ${subtotal}
-situacaoFrete: ${situavaoFrete}
-valorFrete: ${valorFrete}
-freteStatus: ${freteStatus
-pagamentoStatus: ${pagamentoStatus}
+freteStatus: ${freteStatus}
+frete: ${frete}
+pagamentoMensagem: ${pagamentoMensagem}
 descontoPercentual: ${descontoPercentual}
 desconto: ${desconto}
 total: ${total}
 statusMensagem: ${statusMensagem}
-`)
+`
 
 console.log(resumo)
 
