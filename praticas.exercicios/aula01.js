@@ -9,6 +9,6 @@ while (caixas == meta) {
    caixas++
 }
 
-module.exportes {
+module.exportes = {
 caixas
 }
