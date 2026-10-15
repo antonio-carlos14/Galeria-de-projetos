@@ -8,3 +8,7 @@ while (caixas == meta) {
   console.log(`caixas ${meta}`)
    caixas++
 }
+
+module.exportes {
+caixas
+}
