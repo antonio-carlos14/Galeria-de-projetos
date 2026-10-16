@@ -3,8 +3,7 @@ const prompt = require("prompt-sync") ()
 const nome = prompt("digite seu nome: ")
 console.log(`meu nome é ${nome}`)
 
-
-\\ looping
+//looping 
 
 const prompt = require ("prompt-sync") ()
 
@@ -15,8 +14,8 @@ console.log("você entrou na festa!")
 }
 
 
-\\ contador++\-- (aumenta ou diminui de 1 em 1)
-\\ variavel = variavel +1 (aumenta conforme indicado,+1,+2...)
+// contador++\-- (aumenta ou diminui de 1 em 1)
+// variavel = variavel +1 (aumenta conforme indicado,+1,+2...)
 
 let contador = 0
 
@@ -29,7 +28,7 @@ while (contador <= 5) {
 console.log("programa finalizado")
 
 
-\\ do while
+// do while
 
 let contador = 0
 
@@ -44,7 +43,7 @@ do {
 } while (contador <= 3)
 
 
-\\ do while (sistema de acesso de senha)
+// do while (sistema de acesso de senha)
 
 const prompt = require("prompt-sync") ()
 
