@@ -1,9 +1,9 @@
 const prompt = require("prompt-sync") ()
 
 const nomeTurno = prompt("Digite seu turno: ")
-let meta = Number(prompt("Digite a meta de produçâo"))
-let producaoAtual = Number(prompt("Digite a produçâo inicial"))
-const pecasPorCaixa = Number(prompt("Digite a quantidade de itens por caixa"))
+let meta = Number(prompt("Digite a meta de produção: )
+let producaoAtual = Number(prompt("Digite a produçâo inicial: "))
+const pecasPorCaixa = Number(prompt("Digite a quantidade de itens por caixa: "))
 
 const producaoInicial = producaoAtual
 
